@@ -17,3 +17,9 @@ This game is built to support the addition of new words very easily! Just follow
 	words[CATEGORY] = { WORD: DEFINITION,
 			    WORD: DEFINITION,
 			    ...}
+
+Updated 2.1
+===========
+- Added new words to the 'Space' category
+- Reduced the score deducted from asking a hint from 1 point to 0.5 points
+- Added flavor texts whenever a game ends
