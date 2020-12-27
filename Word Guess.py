@@ -44,23 +44,29 @@ def show_gameScreen(words_list):
         if answer == "/hint":
             if hint_no < 3:
                 show_hint(the_word, hint_no)
-                print("1 point has been DEDUCTED.")
+                print("You asked for a hint. (-0.5 points)")
                 score -= 1
-                hint_no += 1
+                hint_no += 0.5
             else:
                 print("Looks like you're out of hints for this question.")
         elif answer == the_word:
-            print("Correct answer! +1 point!")
+            print("Good job, you got the correct answer! (+1 point)")
             score += 1
             ctr += 1
             hint_no = 0
+            print()
         else:
-            print("Wrong answer! -1 point!")
+            print(f"Sorry, but the correct answer was: {the_word} (-1 point)")
             score -=1
             ctr += 1
             hint_no = 0
-
+            print()
+            
+    if score < 0:
+        score = 0
+        
     print(f"Your final score is: {score}")
+    show_flavorText(score, len(words_list))
 
 def show_hint(word, hint_no):
     hint = ""
@@ -71,6 +77,16 @@ def show_hint(word, hint_no):
         print(f"Hint: It ends with the letter {word[-1]}.")
     elif hint_no == 2:
         print(f"Hint: It has a length of {len(word)} letters.")
+
+def show_flavorText(score, divisor):
+    if score / divisor == 1:
+        print("Perfect! Congratulations!")
+    elif score / divisor == 0:
+        print("Oof! That's okay, you can do better next time! :)")
+    elif score / divisor > 0.5:
+        print("That's more than half! Good work :D")
+    elif score / divisor < 0.5:
+        print("That's less than half. Better luck next time :)")
         
 # Program loop
 running = True
@@ -89,7 +105,7 @@ while running:
         score = show_gameScreen(words_list)
     elif command == "2":
         print("Error: Invalid input.") # TODO
-    elif command == "X":
+    elif command == "X" or command == "x":
         running = False
     else:
         print("Error: Invalid input.")

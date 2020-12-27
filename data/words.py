@@ -5,7 +5,10 @@ words["space"] = {
     "black hole": "is a region of space in which the gravity is so intense that not even light can escape",
     "star": "is a celestial body that produces light and heat through fusion",
     "universe": "is the entirety of space, time, matter, and energy",
-    "planet": "is a celestial body commonly orbiting a star and is massive enough to be rounded by its own gravity"
+    "planet": "is a celestial body commonly orbiting a star and is massive enough to be rounded by its own gravity",
+    "moon": "is any celestial body or object orbiting a planet",
+    "satellite": "is a man-made object that orbits a planet for communications or data gathering",
+    "asteroid": "is a large rock that orbit around the Sun"
 }
 
 words["war"] = {
